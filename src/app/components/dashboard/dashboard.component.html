@@ -1,0 +1,40 @@
+<!-- Top navigation -->
+<nav class="navbar navbar-expand-lg shadow navbar-dark bg-dark">
+  <div class="container-fluid">
+    <img src="../../../assets/img/logo.png" width="60px" alt="">
+    <a class="navbar-brand" href="#">Gamez</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="about">About</a>
+        </li>
+      </ul>
+      <div class="d-flex text-light" *ngIf="authService.userData as user">
+        <div class="dropdown">
+          <button class="btn  text-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            <strong class="align-self-center text-capitalize">{{(user.displayName) ? user.displayName : 'User'}}</strong>
+        <img width="34px" class="align-self-start ms-2 img-thumbnail rounded-circle" src="{{(user.photoURL) ? user.photoURL : '/assets/dummy-user.png'}}"
+            alt="{{user.displayName}}">
+          </button>
+          <ul class="dropdown-menu mt-3 dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+            <li><span class="dropdown-item">{{user.email}}</span></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" routerLink="profile">Profile</a></li>
+            <li><a class="dropdown-item" (click)="authService.SignOut()">Logout</a></li>
+          </ul>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
+
+<!-- Footer -->

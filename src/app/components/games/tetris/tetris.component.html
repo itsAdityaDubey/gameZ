@@ -1,0 +1,33 @@
+<style>
+    .gameFrame {
+        width: 98vw;
+        height: 662px;
+        align-items: center;
+    }
+</style>
+<br>
+<div class="container mb-4">
+    <div class="row pt-2 rounded shadow" id="gameLink">
+        <div class="col-2">
+            <img src="../../../assets/img/tetrisLogo.png" class="rounded" alt="Tetris Logo" width="100px">
+        </div>
+        <div class="col-8 pt-2">
+            <h2>Tetris</h2> 
+            <h6>Aditya Dubey</h6> 
+        </div>
+        <div class="col-2 pt-2 text-center" #start >
+            <a class="link h2"(click)="openFullscreen()" title="Start">
+                <i class="fa fa-play" style="color:green"></i>
+            <h6>Start</h6> 
+            </a>
+        </div>
+        <div class="col-2 pt-2 text-center" style="display: none;" #resume >
+            <a class="link h2"(click)="Fullscreen()" title="Start">
+                <i class="fa fa-play" style="color:green"></i>
+            <h6>Resume</h6> 
+            </a>
+        </div>
+    </div>
+</div>
+
+<iframe class="gameFrame" #fullScreen frameborder="0"></iframe>
